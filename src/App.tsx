@@ -7,6 +7,11 @@ function App() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [editingTemplate, setEditingTemplate] = useState<Template | null>(null);
+  const [showFeatured, setShowFeatured] = useState(false);
+
+  const featuredTemplates = useMemo(() => {
+    return templates.filter(t => t.featured);
+  }, []);
 
   const filteredTemplates = useMemo(() => {
     return templates.filter(t => {
@@ -58,11 +63,18 @@ function App() {
 
             {/* Actions */}
             <div className="flex items-center gap-3">
-              <button className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-semibold hover:from-purple-600 hover:to-pink-600 transition-all shadow-lg shadow-purple-500/20">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+              <button
+                onClick={() => setShowFeatured(!showFeatured)}
+                className={`hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all ${
+                  showFeatured
+                    ? 'bg-purple-500/20 text-purple-300 border border-purple-500/40'
+                    : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 shadow-lg shadow-purple-500/20'
+                }`}
+              >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
-                New Template
+                JJ Style
               </button>
             </div>
           </div>
@@ -84,7 +96,8 @@ function App() {
               </span>
             </h2>
             <p className="text-gray-400 text-sm sm:text-base max-w-lg mx-auto">
-              Skip hours of editing. Browse premium effect templates — hover to preview, tap to customize. Parallax, text-behind, glitch effects and more.
+              Skip hours of editing. Browse premium effect templates — hover to preview, tap to customize. 
+              Documentary-style effects inspired by top creators like James Jani.
             </p>
           </div>
 
@@ -106,6 +119,33 @@ function App() {
         </div>
       </section>
 
+      {/* Featured Section - James Jani Style */}
+      {showFeatured && (
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">
+          <div className="flex items-center gap-3 mb-5">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center">
+              <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+              </svg>
+            </div>
+            <div>
+              <h3 className="text-white font-bold text-lg">James Jani Style</h3>
+              <p className="text-gray-400 text-xs">Signature documentary editing effects</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            {featuredTemplates.map(template => (
+              <TemplateCard
+                key={template.id}
+                template={template}
+                onEdit={setEditingTemplate}
+                featured
+              />
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Category Filter */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
         <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-hide">
@@ -120,6 +160,11 @@ function App() {
               }`}
             >
               {category}
+              {category === 'Documentary' && (
+                <span className="ml-1.5 inline-flex items-center px-1.5 py-0.5 rounded-full text-[9px] bg-amber-500/20 text-amber-400 border border-amber-500/30">
+                  JJ
+                </span>
+              )}
             </button>
           ))}
         </div>
@@ -155,7 +200,7 @@ function App() {
             {[
               { label: 'Templates', value: templates.length.toString(), icon: '🎬' },
               { label: 'Categories', value: (categories.length - 1).toString(), icon: '📂' },
-              { label: 'Avg. Duration', value: '2-4s', icon: '⏱️' },
+              { label: 'JJ Style', value: featuredTemplates.length.toString(), icon: '⭐' },
               { label: 'Difficulty', value: 'All Levels', icon: '🎯' },
             ].map(stat => (
               <div key={stat.label} className="p-4 rounded-xl bg-gray-900/50 border border-gray-800/50 text-center">

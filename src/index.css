@@ -121,6 +121,29 @@
   50% { transform: translateX(0); }
 }
 
+@keyframes colorShift {
+  0%, 100% { color: white; text-shadow: 0 0 20px rgba(168,85,247,0.5); }
+  25% { color: #a855f7; text-shadow: 0 0 30px rgba(168,85,247,0.8); }
+  50% { color: #ec4899; text-shadow: 0 0 30px rgba(236,72,153,0.8); }
+  75% { color: #f43f5e; text-shadow: 0 0 30px rgba(244,63,94,0.8); }
+}
+
+@keyframes fastCut1 {
+  0%, 32% { opacity: 1; }
+  33%, 100% { opacity: 0; }
+}
+
+@keyframes fastCut2 {
+  0%, 32% { opacity: 0; }
+  33%, 65% { opacity: 1; }
+  66%, 100% { opacity: 0; }
+}
+
+@keyframes fastCut3 {
+  0%, 65% { opacity: 0; }
+  66%, 100% { opacity: 1; }
+}
+
 @keyframes fadeInScale {
   0% { transform: scale(0.8); opacity: 0; }
   30%, 70% { transform: scale(1); opacity: 1; }
