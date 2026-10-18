@@ -301,6 +301,163 @@ export const templates: Template[] = [
     tags: ['montage', 'fast', 'cuts', 'hook'],
     previewType: 'fastCut'
   },
+
+  // === ADDITIONAL JAMES JANI TECHNIQUES ===
+  {
+    id: 'tension-text',
+    name: 'Tension Text Flash',
+    category: 'Documentary',
+    description: 'Words appear one-by-one rapidly to build suspense. Perfect for dramatic revelations like "He... lost... EVERYTHING".',
+    duration: '2-4s',
+    difficulty: 'Easy',
+    tags: ['text', 'tension', 'suspense', 'flash'],
+    previewType: 'tensionText',
+    featured: true
+  },
+  {
+    id: 'black-cut',
+    name: 'Dramatic Black Cut',
+    category: 'Transitions',
+    description: 'Sudden cut to black before a major reveal. Creates anticipation and emphasizes the moment of truth.',
+    duration: '1-2s',
+    difficulty: 'Easy',
+    tags: ['black', 'cut', 'reveal', 'dramatic'],
+    previewType: 'blackCut'
+  },
+  {
+    id: 'social-post',
+    name: 'Social Media Pop',
+    category: 'Documentary',
+    description: 'Social media posts appearing with notification animations. Great for showing online reactions and viral moments.',
+    duration: '2-3s',
+    difficulty: 'Easy',
+    tags: ['social', 'twitter', 'notification', 'post'],
+    previewType: 'socialPost'
+  },
+  {
+    id: 'stock-chart',
+    name: 'Stock Chart Animation',
+    category: 'Documentary',
+    description: 'Financial charts drawing and animating up/down. Perfect for showing market crashes, gains, or financial data.',
+    duration: '3-5s',
+    difficulty: 'Medium',
+    tags: ['chart', 'stock', 'finance', 'graph'],
+    previewType: 'stockChart',
+    featured: true
+  },
+  {
+    id: 'classified-stamp',
+    name: 'Classified Stamp',
+    category: 'Documentary',
+    description: '"CLASSIFIED" or "CONFIDENTIAL" stamp slamming onto documents with impact. Adds authenticity to investigation content.',
+    duration: '1-2s',
+    difficulty: 'Easy',
+    tags: ['stamp', 'classified', 'document', 'impact'],
+    previewType: 'classifiedStamp',
+    featured: true
+  },
+  {
+    id: 'connection-web',
+    name: 'Connection Web',
+    category: 'Documentary',
+    description: 'Lines connecting people and entities showing relationships. Visualizes complex networks and conspiracies.',
+    duration: '3-5s',
+    difficulty: 'Medium',
+    tags: ['connection', 'web', 'network', 'relationships'],
+    previewType: 'connectionWeb',
+    featured: true
+  },
+  {
+    id: 'text-scramble',
+    name: 'Text Decode',
+    category: 'Typography',
+    description: 'Text that scrambles and decodes letter by letter. Matrix-style effect for revealing hidden information.',
+    duration: '2-4s',
+    difficulty: 'Medium',
+    tags: ['scramble', 'decode', 'matrix', 'text'],
+    previewType: 'textScramble'
+  },
+  {
+    id: 'magnify-zoom',
+    name: 'Magnifying Glass',
+    category: 'Documentary',
+    description: 'Zoom into specific part of a document or image. Highlights key details and evidence.',
+    duration: '2-3s',
+    difficulty: 'Easy',
+    tags: ['magnify', 'zoom', 'detail', 'evidence'],
+    previewType: 'magnifyZoom'
+  },
+  {
+    id: 'conspiracy-board',
+    name: 'Red String Board',
+    category: 'Documentary',
+    description: 'Detective-style conspiracy board with photos connected by red strings. Classic investigation aesthetic.',
+    duration: '4-6s',
+    difficulty: 'Advanced',
+    tags: ['conspiracy', 'board', 'red-string', 'investigation'],
+    previewType: 'conspiracyBoard',
+    featured: true
+  },
+  {
+    id: 'whip-pan',
+    name: 'Whip Pan Transition',
+    category: 'Transitions',
+    description: 'Fast camera pan creating motion blur between scenes. Dynamic and energetic transition effect.',
+    duration: '0.5-1s',
+    difficulty: 'Easy',
+    tags: ['whip', 'pan', 'transition', 'motion'],
+    previewType: 'whipPan'
+  },
+  {
+    id: 'dolly-zoom',
+    name: 'Dolly Zoom Effect',
+    category: 'Motion',
+    description: 'Hitchcock vertigo effect - background moves while foreground stays. Creates unsettling, dramatic feeling.',
+    duration: '2-3s',
+    difficulty: 'Advanced',
+    tags: ['dolly', 'zoom', 'vertigo', 'hitchcock'],
+    previewType: 'dollyZoom'
+  },
+  {
+    id: 'flash-frame',
+    name: 'Flash Frame',
+    category: 'Transitions',
+    description: 'Quick white or black flash between cuts. Adds impact and emphasis to transitions.',
+    duration: '0.2-0.5s',
+    difficulty: 'Easy',
+    tags: ['flash', 'frame', 'impact', 'transition'],
+    previewType: 'flashFrame'
+  },
+  {
+    id: 'quote-reveal',
+    name: 'Quote Reveal',
+    category: 'Typography',
+    description: 'Famous quotes appearing dramatically with attribution. Perfect for impactful statements and revelations.',
+    duration: '3-5s',
+    difficulty: 'Easy',
+    tags: ['quote', 'reveal', 'attribution', 'dramatic'],
+    previewType: 'quoteReveal'
+  },
+  {
+    id: 'progressive-text',
+    name: 'Progressive Text',
+    category: 'Typography',
+    description: 'Lines appearing one by one building a story or argument. Creates narrative momentum.',
+    duration: '4-6s',
+    difficulty: 'Easy',
+    tags: ['progressive', 'text', 'lines', 'narrative'],
+    previewType: 'progressiveText'
+  },
+  {
+    id: 'camera-shake',
+    name: 'Camera Shake Impact',
+    category: 'Effects',
+    description: 'Camera shake on dramatic moments or revelations. Adds visceral impact to key points.',
+    duration: '0.5-1s',
+    difficulty: 'Easy',
+    tags: ['shake', 'camera', 'impact', 'dramatic'],
+    previewType: 'cameraShake'
+  },
 ];
 
 export const categories = ['All', 'Documentary', 'Motion', 'Typography', 'Effects', 'Transitions', 'Text'];
