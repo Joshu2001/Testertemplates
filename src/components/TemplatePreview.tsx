@@ -92,6 +92,36 @@ export const TemplatePreview: React.FC<PreviewProps> = ({ type }) => {
       return <ProgressiveTextPreview />;
     case 'cameraShake':
       return <CameraShakePreview />;
+    case 'teleportGlitch':
+      return <TeleportGlitchPreview />;
+    case 'whooshSlide':
+      return <WhooshSlidePreview />;
+    case 'impactZoom':
+      return <ImpactZoomPreview />;
+    case 'paperTear':
+      return <PaperTearPreview />;
+    case 'securityCamera':
+      return <SecurityCameraPreview />;
+    case 'breakingNews':
+      return <BreakingNewsPreview />;
+    case 'countdownTimer':
+      return <CountdownTimerPreview />;
+    case 'splitCompare':
+      return <SplitComparePreview />;
+    case 'wireTransfer':
+      return <WireTransferPreview />;
+    case 'courtDocument':
+      return <CourtDocumentPreview />;
+    case 'staticTransition':
+      return <StaticTransitionPreview />;
+    case 'polaroidScatter':
+      return <PolaroidScatterPreview />;
+    case 'envelopeOpen':
+      return <EnvelopeOpenPreview />;
+    case 'fingerprintReveal':
+      return <FingerprintRevealPreview />;
+    case 'phoneNotification':
+      return <PhoneNotificationPreview />;
     default:
       return <ParallaxPreview />;
   }
@@ -870,6 +900,285 @@ const CameraShakePreview = () => (
   <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-red-900 to-rose-900 flex items-center justify-center">
     <div style={{ animation: 'shake 0.5s ease-in-out infinite' }}>
       <span className="text-white font-black text-xl">IMPACT!</span>
+    </div>
+  </div>
+);
+
+// === SOUND-SYNCED & TELEPORTATION EFFECTS ===
+
+const TeleportGlitchPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-900 to-black flex items-center justify-center">
+    <div className="relative" style={{ animation: 'teleportGlitch 2s ease-in-out infinite' }}>
+      <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg shadow-2xl" />
+      {/* Glitch layers */}
+      <div className="absolute inset-0 bg-cyan-400/50 rounded-lg" style={{ animation: 'glitch1 0.3s infinite' }} />
+      <div className="absolute inset-0 bg-red-400/50 rounded-lg" style={{ animation: 'glitch2 0.3s infinite 0.1s' }} />
+    </div>
+  </div>
+);
+
+const WhooshSlidePreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-blue-900 to-indigo-900">
+    <div className="absolute inset-0 flex items-center" style={{ animation: 'whooshSlide 2s ease-out infinite' }}>
+      <div className="w-20 h-20 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-lg shadow-2xl ml-4" />
+    </div>
+    {/* Motion blur streaks */}
+    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent" style={{ animation: 'whooshSlide 2s ease-out infinite' }} />
+  </div>
+);
+
+const ImpactZoomPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-900 to-black flex items-center justify-center">
+    <div style={{ animation: 'impactZoom 1.5s ease-out infinite' }}>
+      <div className="text-center">
+        <span className="text-white font-black text-2xl">BOOM</span>
+        <div className="w-20 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent mx-auto mt-2" />
+      </div>
+    </div>
+    {/* Impact ring */}
+    <div className="absolute inset-0 flex items-center justify-center">
+      <div className="w-32 h-32 rounded-full border-4 border-red-500/50" style={{ animation: 'impactRing 1.5s ease-out infinite' }} />
+    </div>
+  </div>
+);
+
+const PaperTearPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-amber-50 to-orange-50">
+    {/* Left side */}
+    <div className="absolute top-0 left-0 w-1/2 h-full bg-amber-100" style={{ animation: 'paperTearLeft 2s ease-in-out infinite' }}>
+      <div className="absolute top-4 left-4 w-16 h-1 bg-gray-800 rounded" />
+      <div className="absolute top-8 left-4 w-12 h-0.5 bg-gray-600 rounded" />
+    </div>
+    {/* Right side */}
+    <div className="absolute top-0 right-0 w-1/2 h-full bg-amber-100" style={{ animation: 'paperTearRight 2s ease-in-out infinite' }}>
+      <div className="absolute top-4 right-4 w-16 h-1 bg-gray-800 rounded" />
+      <div className="absolute top-8 right-4 w-12 h-0.5 bg-gray-600 rounded" />
+    </div>
+    {/* Tear line */}
+    <div className="absolute top-0 bottom-0 left-1/2 w-1 bg-gradient-to-b from-transparent via-gray-400 to-transparent" style={{ animation: 'paperTearLine 2s ease-in-out infinite' }} />
+  </div>
+);
+
+const SecurityCameraPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gray-900">
+    {/* Grainy footage */}
+    <div className="absolute inset-0 bg-gradient-to-br from-gray-800 to-gray-900">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-16 bg-gray-700 rounded-t-full" />
+    </div>
+    {/* Camera overlay */}
+    <div className="absolute inset-0 border-2 border-gray-600/30">
+      {/* REC indicator */}
+      <div className="absolute top-2 left-2 flex items-center gap-1">
+        <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+        <span className="text-red-500 text-[8px] font-mono">REC</span>
+      </div>
+      {/* Timestamp */}
+      <div className="absolute top-2 right-2 text-white/60 text-[8px] font-mono">
+        2024-01-15 23:47:12
+      </div>
+      {/* Camera ID */}
+      <div className="absolute bottom-2 left-2 text-white/60 text-[8px] font-mono">
+        CAM-03
+      </div>
+    </div>
+    {/* Scan lines */}
+    {Array.from({ length: 6 }).map((_, i) => (
+      <div key={i} className="absolute left-0 right-0 h-px bg-white/5" style={{ top: `${15 + i * 15}%` }} />
+    ))}
+  </div>
+);
+
+const BreakingNewsPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-900 to-slate-900">
+    {/* Breaking banner */}
+    <div className="absolute top-4 left-0 right-0 bg-red-600 px-2 py-1 flex items-center gap-2">
+      <span className="text-white font-black text-[10px]">BREAKING</span>
+      <div className="flex-1 h-px bg-white/30" />
+    </div>
+    {/* News ticker */}
+    <div className="absolute bottom-4 left-0 right-0 bg-black/80 px-2 py-1 overflow-hidden">
+      <div className="flex gap-4 whitespace-nowrap" style={{ animation: 'newsTicker 8s linear infinite' }}>
+        <span className="text-white text-[8px]">MAJOR DEVELOPMENT IN INVESTIGATION</span>
+        <span className="text-white text-[8px]">•</span>
+        <span className="text-white text-[8px]">NEW EVIDENCE REVEALED</span>
+        <span className="text-white text-[8px]">•</span>
+        <span className="text-white text-[8px]">SOURCES CONFIRM DETAILS</span>
+      </div>
+    </div>
+  </div>
+);
+
+const CountdownTimerPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-black to-gray-900 flex items-center justify-center">
+    <div className="text-center">
+      <div className="text-3xl font-mono font-black text-red-500" style={{ animation: 'countdownPulse 1s ease-in-out infinite' }}>
+        3
+      </div>
+      <div className="w-16 h-1 bg-gradient-to-r from-transparent via-red-500 to-transparent mx-auto mt-2" />
+    </div>
+    {/* Pulsing ring */}
+    <div className="absolute inset-0 flex items-center justify-center">
+      <div className="w-24 h-24 rounded-full border-2 border-red-500/30" style={{ animation: 'countdownRing 1s ease-out infinite' }} />
+    </div>
+  </div>
+);
+
+const SplitComparePreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-900 to-slate-900">
+    {/* Left side */}
+    <div className="absolute top-0 left-0 w-1/2 h-full bg-gradient-to-br from-red-900 to-rose-900 flex items-center justify-center">
+      <span className="text-white font-bold text-sm">BEFORE</span>
+    </div>
+    {/* Right side */}
+    <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-br from-green-900 to-emerald-900 flex items-center justify-center">
+      <span className="text-white font-bold text-sm">AFTER</span>
+    </div>
+    {/* Divider */}
+    <div className="absolute top-0 bottom-0 left-1/2 w-1 bg-white shadow-lg" style={{ animation: 'splitDivider 3s ease-in-out infinite' }} />
+  </div>
+);
+
+const WireTransferPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-900 to-green-950">
+    {/* Account boxes */}
+    <div className="absolute top-4 left-4 w-16 h-12 bg-gray-800 rounded border border-gray-700 flex items-center justify-center">
+      <span className="text-green-400 text-[8px] font-mono">ACC-1</span>
+    </div>
+    <div className="absolute top-4 right-4 w-16 h-12 bg-gray-800 rounded border border-gray-700 flex items-center justify-center">
+      <span className="text-green-400 text-[8px] font-mono">ACC-2</span>
+    </div>
+    {/* Money animation */}
+    <div className="absolute top-8 left-1/2 -translate-x-1/2" style={{ animation: 'wireTransfer 2s ease-in-out infinite' }}>
+      <span className="text-green-400 text-lg">$</span>
+    </div>
+    {/* Arrow */}
+    <div className="absolute top-10 left-1/2 -translate-x-1/2 w-20 h-px bg-gradient-to-r from-green-400 to-transparent" />
+  </div>
+);
+
+const CourtDocumentPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+    <div className="w-24 h-28 bg-white shadow-lg rounded-sm p-2 border border-gray-300">
+      {/* Header */}
+      <div className="text-center mb-2">
+        <div className="w-12 h-0.5 bg-gray-800 mx-auto mb-0.5" />
+        <div className="w-8 h-0.5 bg-gray-600 mx-auto" />
+      </div>
+      {/* Content */}
+      <div className="space-y-0.5">
+        <div className="w-full h-0.5 bg-gray-400 rounded" />
+        <div className="w-3/4 h-0.5 bg-gray-400 rounded" />
+        <div className="w-full h-0.5 bg-gray-300 rounded" />
+        <div className="w-2/3 h-0.5 bg-gray-300 rounded" />
+      </div>
+      {/* Official stamp */}
+      <div className="absolute bottom-3 right-3 w-6 h-6 border-2 border-blue-600 rounded-full flex items-center justify-center rotate-12">
+        <span className="text-blue-600 text-[6px] font-bold">SEAL</span>
+      </div>
+    </div>
+  </div>
+);
+
+const StaticTransitionPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-black">
+    {/* Static noise */}
+    {Array.from({ length: 50 }).map((_, i) => (
+      <div
+        key={i}
+        className="absolute w-1 h-1 bg-white/30"
+        style={{
+          left: `${Math.random() * 100}%`,
+          top: `${Math.random() * 100}%`,
+          animation: `staticNoise ${0.1 + Math.random() * 0.2}s steps(2) infinite ${Math.random() * 0.5}s`
+        }}
+      />
+    ))}
+    {/* Scan lines */}
+    {Array.from({ length: 10 }).map((_, i) => (
+      <div key={i} className="absolute left-0 right-0 h-px bg-white/10" style={{ top: `${i * 10}%` }} />
+    ))}
+  </div>
+);
+
+const PolaroidScatterPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-amber-900 to-yellow-900">
+    {[
+      { x: '15%', y: '20%', rotate: '-15deg', delay: '0s' },
+      { x: '60%', y: '15%', rotate: '10deg', delay: '0.2s' },
+      { x: '35%', y: '55%', rotate: '-5deg', delay: '0.4s' },
+      { x: '70%', y: '60%', rotate: '8deg', delay: '0.6s' },
+    ].map((polaroid, i) => (
+      <div
+        key={i}
+        className="absolute w-10 h-12 bg-white shadow-lg rounded-sm p-1"
+        style={{ left: polaroid.x, top: polaroid.y, transform: `rotate(${polaroid.rotate})`, animation: `polaroidLand 2s ease-out infinite ${polaroid.delay}` }}
+      >
+        <div className="w-full h-8 bg-gradient-to-br from-gray-600 to-gray-700 rounded-sm mb-0.5" />
+        <div className="w-full h-1 bg-gray-200 rounded-sm" />
+      </div>
+    ))}
+  </div>
+);
+
+const EnvelopeOpenPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+    <div className="relative">
+      {/* Envelope body */}
+      <div className="w-20 h-14 bg-amber-100 rounded-sm shadow-lg border border-amber-200" />
+      {/* Envelope flap */}
+      <div className="absolute top-0 left-0 w-20 h-7 bg-amber-200 rounded-t-sm" style={{ animation: 'envelopeOpen 2s ease-in-out infinite', transformOrigin: 'top center' }} />
+      {/* Letter peeking out */}
+      <div className="absolute top-2 left-2 right-2 h-10 bg-white rounded-sm shadow" style={{ animation: 'letterRise 2s ease-in-out infinite' }}>
+        <div className="w-full h-0.5 bg-gray-400 mt-2 mx-2 rounded" />
+        <div className="w-3/4 h-0.5 bg-gray-300 mx-2 rounded" />
+      </div>
+    </div>
+  </div>
+);
+
+const FingerprintRevealPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-900 to-slate-900 flex items-center justify-center">
+    {/* Fingerprint */}
+    <div className="relative" style={{ animation: 'fingerprintReveal 3s ease-in-out infinite' }}>
+      <svg className="w-16 h-20" viewBox="0 0 100 120" fill="none">
+        <path d="M 50 10 Q 30 20 25 40 Q 20 60 25 80 Q 30 100 50 110" stroke="rgba(168,85,247,0.6)" strokeWidth="2" fill="none" />
+        <path d="M 50 15 Q 35 25 30 45 Q 25 65 30 85 Q 35 100 50 105" stroke="rgba(168,85,247,0.5)" strokeWidth="2" fill="none" />
+        <path d="M 50 20 Q 40 30 35 50 Q 30 70 35 90 Q 40 100 50 100" stroke="rgba(168,85,247,0.4)" strokeWidth="2" fill="none" />
+        <path d="M 50 25 Q 45 35 40 55 Q 35 75 40 90 Q 45 95 50 95" stroke="rgba(168,85,247,0.3)" strokeWidth="2" fill="none" />
+      </svg>
+    </div>
+    {/* Dust particles */}
+    {Array.from({ length: 8 }).map((_, i) => (
+      <div
+        key={i}
+        className="absolute w-0.5 h-0.5 bg-purple-400/50 rounded-full"
+        style={{
+          left: `${40 + Math.random() * 20}%`,
+          top: `${30 + Math.random() * 40}%`,
+          animation: `particleFloat ${1 + Math.random()}s ease-in-out infinite ${Math.random() * 2}s`
+        }}
+      />
+    ))}
+  </div>
+);
+
+const PhoneNotificationPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-900 to-black flex items-center justify-center">
+    {/* Phone */}
+    <div className="w-16 h-24 bg-gray-800 rounded-lg border-2 border-gray-700 relative overflow-hidden">
+      {/* Screen */}
+      <div className="absolute inset-1 bg-gradient-to-br from-gray-900 to-black rounded">
+        {/* Notification */}
+        <div className="absolute top-2 left-1 right-1 bg-white/10 backdrop-blur-sm rounded p-1" style={{ animation: 'slideUp 3s ease-in-out infinite' }}>
+          <div className="flex items-center gap-1">
+            <div className="w-2 h-2 rounded-full bg-blue-500" />
+            <div className="flex-1">
+              <div className="w-full h-0.5 bg-white/60 rounded mb-0.5" />
+              <div className="w-3/4 h-0.5 bg-white/40 rounded" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 );

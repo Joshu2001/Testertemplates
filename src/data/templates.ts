@@ -458,6 +458,163 @@ export const templates: Template[] = [
     tags: ['shake', 'camera', 'impact', 'dramatic'],
     previewType: 'cameraShake'
   },
+
+  // === SOUND-SYNCED & TELEPORTATION EFFECTS ===
+  {
+    id: 'teleport-glitch',
+    name: 'Teleport Glitch Pop',
+    category: 'Transitions',
+    description: 'Elements teleport in with digital glitch and sound sync. Perfect for sudden reveals with impact audio.',
+    duration: '0.5-1s',
+    difficulty: 'Easy',
+    tags: ['teleport', 'glitch', 'pop', 'sound-sync'],
+    previewType: 'teleportGlitch',
+    featured: true
+  },
+  {
+    id: 'whoosh-slide',
+    name: 'Whoosh Slide',
+    category: 'Transitions',
+    description: 'Elements slide in with whoosh sound effect. Clean, fast, and satisfying with audio sync.',
+    duration: '0.5-1s',
+    difficulty: 'Easy',
+    tags: ['whoosh', 'slide', 'sound', 'fast'],
+    previewType: 'whooshSlide'
+  },
+  {
+    id: 'impact-zoom',
+    name: 'Impact Zoom',
+    category: 'Motion',
+    description: 'Dramatic zoom with bass drop impact sound. Creates powerful emphasis on key moments.',
+    duration: '0.5-1s',
+    difficulty: 'Easy',
+    tags: ['impact', 'zoom', 'bass', 'emphasis'],
+    previewType: 'impactZoom',
+    featured: true
+  },
+  {
+    id: 'paper-tear',
+    name: 'Paper Tear Transition',
+    category: 'Transitions',
+    description: 'Paper ripping effect with tear sound. Adds tactile, physical feel to scene changes.',
+    duration: '1-2s',
+    difficulty: 'Medium',
+    tags: ['paper', 'tear', 'rip', 'transition'],
+    previewType: 'paperTear'
+  },
+  {
+    id: 'security-camera',
+    name: 'Security Camera Overlay',
+    category: 'Documentary',
+    description: 'CCTV-style overlay with timestamp, recording indicator, and grain. Adds surveillance aesthetic.',
+    duration: 'Continuous',
+    difficulty: 'Easy',
+    tags: ['security', 'camera', 'cctv', 'surveillance'],
+    previewType: 'securityCamera',
+    featured: true
+  },
+  {
+    id: 'breaking-news',
+    name: 'Breaking News Ticker',
+    category: 'Documentary',
+    description: 'News ticker scrolling at bottom with "BREAKING" banner. Perfect for dramatic announcements.',
+    duration: '3-5s',
+    difficulty: 'Easy',
+    tags: ['news', 'ticker', 'breaking', 'banner'],
+    previewType: 'breakingNews'
+  },
+  {
+    id: 'countdown-timer',
+    name: 'Countdown Timer',
+    category: 'Documentary',
+    description: 'Dramatic countdown building tension before a reveal. Creates anticipation with ticking sound.',
+    duration: '3-5s',
+    difficulty: 'Easy',
+    tags: ['countdown', 'timer', 'tension', 'reveal'],
+    previewType: 'countdownTimer',
+    featured: true
+  },
+  {
+    id: 'split-compare',
+    name: 'Split Screen Compare',
+    category: 'Transitions',
+    description: 'Side-by-side comparison with sliding divider. Perfect for before/after or contrast moments.',
+    duration: '2-3s',
+    difficulty: 'Easy',
+    tags: ['split', 'compare', 'before', 'after'],
+    previewType: 'splitCompare'
+  },
+  {
+    id: 'wire-transfer',
+    name: 'Wire Transfer Animation',
+    category: 'Documentary',
+    description: 'Money transferring between accounts with animation. Visualizes financial transactions and fraud.',
+    duration: '2-4s',
+    difficulty: 'Medium',
+    tags: ['wire', 'transfer', 'money', 'transaction'],
+    previewType: 'wireTransfer',
+    featured: true
+  },
+  {
+    id: 'court-document',
+    name: 'Court Document',
+    category: 'Documentary',
+    description: 'Legal document styling with official headers and stamps. Adds authenticity to investigation content.',
+    duration: '2-3s',
+    difficulty: 'Easy',
+    tags: ['court', 'legal', 'document', 'official'],
+    previewType: 'courtDocument'
+  },
+  {
+    id: 'static-transition',
+    name: 'TV Static Transition',
+    category: 'Transitions',
+    description: 'Old TV static noise between scenes with channel change sound. Retro and attention-grabbing.',
+    duration: '0.5-1s',
+    difficulty: 'Easy',
+    tags: ['static', 'tv', 'noise', 'channel'],
+    previewType: 'staticTransition'
+  },
+  {
+    id: 'polaroid-scatter',
+    name: 'Polaroid Scatter',
+    category: 'Documentary',
+    description: 'Multiple polaroid photos scattering and landing. Creates nostalgic, evidence-collection feel.',
+    duration: '2-3s',
+    difficulty: 'Medium',
+    tags: ['polaroid', 'scatter', 'photos', 'nostalgic'],
+    previewType: 'polaroidScatter'
+  },
+  {
+    id: 'envelope-open',
+    name: 'Envelope Open',
+    category: 'Documentary',
+    description: 'Envelope opening to reveal document inside. Builds anticipation for what\'s inside.',
+    duration: '2-3s',
+    difficulty: 'Medium',
+    tags: ['envelope', 'open', 'reveal', 'letter'],
+    previewType: 'envelopeOpen'
+  },
+  {
+    id: 'fingerprint-reveal',
+    name: 'Fingerprint Reveal',
+    category: 'Documentary',
+    description: 'Fingerprint appearing with dusting effect. Perfect for investigation and forensic content.',
+    duration: '2-3s',
+    difficulty: 'Easy',
+    tags: ['fingerprint', 'forensic', 'investigation', 'reveal'],
+    previewType: 'fingerprintReveal'
+  },
+  {
+    id: 'phone-notification',
+    name: 'Phone Notification',
+    category: 'Documentary',
+    description: 'Phone screen with incoming message/notification. Shows digital communication and alerts.',
+    duration: '2-3s',
+    difficulty: 'Easy',
+    tags: ['phone', 'notification', 'message', 'alert'],
+    previewType: 'phoneNotification'
+  },
 ];
 
 export const categories = ['All', 'Documentary', 'Motion', 'Typography', 'Effects', 'Transitions', 'Text'];
