@@ -615,6 +615,164 @@ export const templates: Template[] = [
     tags: ['phone', 'notification', 'message', 'alert'],
     previewType: 'phoneNotification'
   },
+
+  // === MAGNATES MEDIA STYLE - LUXURY & BUSINESS ===
+  {
+    id: 'luxury-title',
+    name: 'Luxury Title Reveal',
+    category: 'Business',
+    description: 'Elegant title with gold accents and smooth animation. Perfect for high-end business and wealth documentaries.',
+    duration: '2-3s',
+    difficulty: 'Easy',
+    tags: ['luxury', 'gold', 'title', 'business'],
+    previewType: 'luxuryTitle',
+    featured: true
+  },
+  {
+    id: 'money-stack',
+    name: 'Money Stack Animation',
+    category: 'Business',
+    description: 'Stacks of money appearing with smooth 3D animation. Visualizes wealth accumulation and financial growth.',
+    duration: '2-4s',
+    difficulty: 'Medium',
+    tags: ['money', 'stack', 'wealth', '3d'],
+    previewType: 'moneyStack',
+    featured: true
+  },
+  {
+    id: 'empire-map',
+    name: 'Empire Expansion Map',
+    category: 'Business',
+    description: 'Business empire expanding across a world map with glowing connections. Shows global reach and dominance.',
+    duration: '4-6s',
+    difficulty: 'Advanced',
+    tags: ['empire', 'map', 'global', 'expansion'],
+    previewType: 'empireMap',
+    featured: true
+  },
+  {
+    id: 'stock-ticker',
+    name: 'Stock Ticker Scroll',
+    category: 'Business',
+    description: 'Financial stock ticker scrolling with real-time data feel. Adds Wall Street authenticity.',
+    duration: 'Continuous',
+    difficulty: 'Easy',
+    tags: ['stock', 'ticker', 'finance', 'wall-street'],
+    previewType: 'stockTicker'
+  },
+  {
+    id: 'ceo-portrait',
+    name: 'CEO Portrait Reveal',
+    category: 'Business',
+    description: 'Dramatic portrait reveal with cinematic lighting and name card. Perfect for introducing key figures.',
+    duration: '2-3s',
+    difficulty: 'Easy',
+    tags: ['ceo', 'portrait', 'executive', 'reveal'],
+    previewType: 'ceoPortrait',
+    featured: true
+  },
+  {
+    id: 'boardroom-zoom',
+    name: 'Boardroom Zoom',
+    category: 'Business',
+    description: 'Smooth zoom into corporate boardroom setting. Creates high-stakes business atmosphere.',
+    duration: '2-3s',
+    difficulty: 'Easy',
+    tags: ['boardroom', 'corporate', 'zoom', 'business'],
+    previewType: 'boardroomZoom'
+  },
+  {
+    id: 'gold-gradient',
+    name: 'Gold Gradient Overlay',
+    category: 'Effects',
+    description: 'Luxurious gold gradient overlay with subtle shimmer. Adds premium feel to any footage.',
+    duration: 'Continuous',
+    difficulty: 'Easy',
+    tags: ['gold', 'gradient', 'luxury', 'shimmer'],
+    previewType: 'goldGradient'
+  },
+  {
+    id: 'merger-acquisition',
+    name: 'Merger & Acquisition',
+    category: 'Business',
+    description: 'Two companies merging with smooth animation. Visualizes business deals and acquisitions.',
+    duration: '2-3s',
+    difficulty: 'Medium',
+    tags: ['merger', 'acquisition', 'deal', 'business'],
+    previewType: 'mergerAcquisition'
+  },
+  {
+    id: 'luxury-car-reveal',
+    name: 'Luxury Car Reveal',
+    category: 'Business',
+    description: 'Sleek car silhouette with dramatic lighting reveal. Showcases success and luxury lifestyle.',
+    duration: '2-3s',
+    difficulty: 'Easy',
+    tags: ['car', 'luxury', 'reveal', 'success'],
+    previewType: 'luxuryCarReveal',
+    featured: true
+  },
+  {
+    id: 'skyscraper-build',
+    name: 'Skyscraper Build',
+    category: 'Business',
+    description: 'Skyscraper rising from ground up. Symbolizes empire building and growth.',
+    duration: '3-5s',
+    difficulty: 'Medium',
+    tags: ['skyscraper', 'build', 'growth', 'empire'],
+    previewType: 'skyscraperBuild'
+  },
+  {
+    id: 'signature-appear',
+    name: 'Signature Appear',
+    category: 'Business',
+    description: 'Handwritten signature appearing on document. Adds authenticity to deals and contracts.',
+    duration: '2-3s',
+    difficulty: 'Easy',
+    tags: ['signature', 'contract', 'deal', 'document'],
+    previewType: 'signatureAppear'
+  },
+  {
+    id: 'wealth-counter',
+    name: 'Wealth Counter',
+    category: 'Business',
+    description: 'Net worth counter rapidly increasing. Shows wealth accumulation and financial success.',
+    duration: '3-5s',
+    difficulty: 'Easy',
+    tags: ['wealth', 'counter', 'net-worth', 'money'],
+    previewType: 'wealthCounter',
+    featured: true
+  },
+  {
+    id: 'corporate-logo-wall',
+    name: 'Corporate Logo Wall',
+    category: 'Business',
+    description: 'Multiple corporate logos appearing in grid formation. Shows industry players and competition.',
+    duration: '3-4s',
+    difficulty: 'Medium',
+    tags: ['logo', 'corporate', 'wall', 'companies'],
+    previewType: 'corporateLogoWall'
+  },
+  {
+    id: 'success-montage',
+    name: 'Success Montage',
+    category: 'Business',
+    description: 'Quick cuts of luxury items - cars, watches, mansions. Showcases the good life.',
+    duration: '2-3s',
+    difficulty: 'Easy',
+    tags: ['success', 'luxury', 'montage', 'lifestyle'],
+    previewType: 'successMontage'
+  },
+  {
+    id: 'power-meeting',
+    name: 'Power Meeting',
+    category: 'Business',
+    description: 'Silhouettes around a conference table with dramatic lighting. High-stakes business negotiations.',
+    duration: '2-3s',
+    difficulty: 'Easy',
+    tags: ['meeting', 'power', 'negotiation', 'corporate'],
+    previewType: 'powerMeeting'
+  },
 ];
 
-export const categories = ['All', 'Documentary', 'Motion', 'Typography', 'Effects', 'Transitions', 'Text'];
+export const categories = ['All', 'Documentary', 'Business', 'Motion', 'Typography', 'Effects', 'Transitions', 'Text'];

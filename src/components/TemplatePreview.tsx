@@ -122,6 +122,36 @@ export const TemplatePreview: React.FC<PreviewProps> = ({ type }) => {
       return <FingerprintRevealPreview />;
     case 'phoneNotification':
       return <PhoneNotificationPreview />;
+    case 'luxuryTitle':
+      return <LuxuryTitlePreview />;
+    case 'moneyStack':
+      return <MoneyStackPreview />;
+    case 'empireMap':
+      return <EmpireMapPreview />;
+    case 'stockTicker':
+      return <StockTickerPreview />;
+    case 'ceoPortrait':
+      return <CEOPortraitPreview />;
+    case 'boardroomZoom':
+      return <BoardroomZoomPreview />;
+    case 'goldGradient':
+      return <GoldGradientPreview />;
+    case 'mergerAcquisition':
+      return <MergerAcquisitionPreview />;
+    case 'luxuryCarReveal':
+      return <LuxuryCarRevealPreview />;
+    case 'skyscraperBuild':
+      return <SkyscraperBuildPreview />;
+    case 'signatureAppear':
+      return <SignatureAppearPreview />;
+    case 'wealthCounter':
+      return <WealthCounterPreview />;
+    case 'corporateLogoWall':
+      return <CorporateLogoWallPreview />;
+    case 'successMontage':
+      return <SuccessMontagePreview />;
+    case 'powerMeeting':
+      return <PowerMeetingPreview />;
     default:
       return <ParallaxPreview />;
   }
@@ -1180,6 +1210,275 @@ const PhoneNotificationPreview = () => (
         </div>
       </div>
     </div>
+  </div>
+);
+
+// === MAGNATES MEDIA STYLE - LUXURY & BUSINESS ===
+
+const LuxuryTitlePreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-900 flex items-center justify-center">
+    <div className="text-center" style={{ animation: 'fadeInScale 3s ease-out infinite' }}>
+      <div className="text-2xl font-bold bg-gradient-to-r from-yellow-400 via-yellow-200 to-yellow-400 bg-clip-text text-transparent tracking-wider">
+        EMPIRE
+      </div>
+      <div className="w-20 h-0.5 bg-gradient-to-r from-transparent via-yellow-500 to-transparent mx-auto mt-2" />
+    </div>
+    {/* Gold particles */}
+    {Array.from({ length: 8 }).map((_, i) => (
+      <div
+        key={i}
+        className="absolute w-1 h-1 bg-yellow-400/50 rounded-full"
+        style={{
+          left: `${Math.random() * 100}%`,
+          top: `${Math.random() * 100}%`,
+          animation: `particleFloat ${2 + Math.random() * 2}s ease-in-out infinite ${Math.random() * 2}s`
+        }}
+      />
+    ))}
+  </div>
+);
+
+const MoneyStackPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-900 to-black flex items-center justify-center">
+    <div className="relative" style={{ perspective: '800px' }}>
+      {/* Money stacks */}
+      {[0, 1, 2, 3].map((i) => (
+        <div
+          key={i}
+          className="absolute w-16 h-10 bg-gradient-to-br from-green-600 to-green-800 rounded-sm shadow-2xl border border-green-500/30"
+          style={{
+            transform: `translateY(${-i * 8}px) rotateX(${10 - i * 3}deg)`,
+            animation: `moneyStack 3s ease-out infinite ${i * 0.2}s`
+          }}
+        >
+          <div className="w-full h-full flex items-center justify-center text-green-300 font-bold text-xs">$</div>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+const EmpireMapPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-900 to-black">
+    {/* World map outline */}
+    <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 100 60">
+      <ellipse cx="50" cy="30" rx="45" ry="25" fill="none" stroke="currentColor" strokeWidth="0.5" />
+      <path d="M 20 25 Q 30 20 40 25 Q 50 30 60 25 Q 70 20 80 25" fill="none" stroke="currentColor" strokeWidth="0.5" />
+    </svg>
+    {/* Glowing connection points */}
+    {[
+      { x: '25%', y: '35%' },
+      { x: '50%', y: '30%' },
+      { x: '75%', y: '40%' },
+      { x: '60%', y: '55%' },
+    ].map((point, i) => (
+      <div
+        key={i}
+        className="absolute w-2 h-2 rounded-full bg-yellow-400 shadow-lg shadow-yellow-400/50"
+        style={{
+          left: point.x,
+          top: point.y,
+          animation: `pulse 2s ease-in-out infinite ${i * 0.3}s`
+        }}
+      />
+    ))}
+    {/* Connection lines */}
+    <svg className="absolute inset-0 w-full h-full" style={{ animation: 'fadeInScale 3s ease-out infinite' }}>
+      <line x1="25%" y1="36%" x2="50%" y2="31%" stroke="rgba(250,204,21,0.5)" strokeWidth="0.5" />
+      <line x1="50%" y1="31%" x2="75%" y2="41%" stroke="rgba(250,204,21,0.5)" strokeWidth="0.5" />
+      <line x1="75%" y1="41%" x2="60%" y2="56%" stroke="rgba(250,204,21,0.5)" strokeWidth="0.5" />
+    </svg>
+  </div>
+);
+
+const StockTickerPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-900 to-black">
+    <div className="absolute bottom-4 left-0 right-0 bg-black/80 border-t border-green-500/30 py-1 overflow-hidden">
+      <div className="flex gap-4 whitespace-nowrap" style={{ animation: 'newsTicker 10s linear infinite' }}>
+        <span className="text-green-400 text-[8px] font-mono">AAPL +2.4%</span>
+        <span className="text-red-400 text-[8px] font-mono">TSLA -1.2%</span>
+        <span className="text-green-400 text-[8px] font-mono">MSFT +3.1%</span>
+        <span className="text-green-400 text-[8px] font-mono">GOOGL +1.8%</span>
+        <span className="text-red-400 text-[8px] font-mono">AMZN -0.5%</span>
+        <span className="text-green-400 text-[8px] font-mono">NVDA +5.2%</span>
+      </div>
+    </div>
+  </div>
+);
+
+const CEOPortraitPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-900 to-black flex items-center justify-center">
+    {/* Portrait silhouette */}
+    <div className="relative" style={{ animation: 'fadeInScale 2.5s ease-out infinite' }}>
+      <div className="w-20 h-24 bg-gradient-to-br from-gray-700 to-gray-900 rounded-t-full" />
+      {/* Name card */}
+      <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-black/80 backdrop-blur-sm px-3 py-1 border border-yellow-500/30 rounded">
+        <div className="text-yellow-400 text-[8px] font-bold">JOHN DOE</div>
+        <div className="text-gray-400 text-[6px]">CEO & Founder</div>
+      </div>
+    </div>
+    {/* Dramatic lighting */}
+    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+  </div>
+);
+
+const BoardroomZoomPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900">
+    <div className="absolute inset-0 flex items-center justify-center" style={{ animation: 'zoomBlur 4s ease-in-out infinite' }}>
+      {/* Table */}
+      <div className="w-32 h-16 bg-gradient-to-br from-amber-900 to-amber-950 rounded-lg shadow-2xl" />
+      {/* Chairs */}
+      {[-1, 0, 1].map((i) => (
+        <div
+          key={i}
+          className="absolute w-4 h-6 bg-gray-700 rounded-t-full"
+          style={{ bottom: '30%', left: `${50 + i * 15}%`, transform: 'translateX(-50%)' }}
+        />
+      ))}
+    </div>
+    {/* Dramatic lighting */}
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-20 bg-yellow-500/10 rounded-full blur-2xl" />
+  </div>
+);
+
+const GoldGradientPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-900 to-black">
+    <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/20 via-yellow-300/10 to-yellow-600/20" style={{ animation: 'goldShimmer 3s ease-in-out infinite' }} />
+    {/* Shimmer effect */}
+    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-400/30 to-transparent" style={{ animation: 'lightLeak 4s ease-in-out infinite' }} />
+  </div>
+);
+
+const MergerAcquisitionPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-900 to-black flex items-center justify-center">
+    {/* Company A */}
+    <div className="absolute left-8 w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg shadow-lg" style={{ animation: 'mergerLeft 3s ease-in-out infinite' }}>
+      <div className="w-full h-full flex items-center justify-center text-white font-bold text-xs">A</div>
+    </div>
+    {/* Company B */}
+    <div className="absolute right-8 w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-700 rounded-lg shadow-lg" style={{ animation: 'mergerRight 3s ease-in-out infinite' }}>
+      <div className="w-full h-full flex items-center justify-center text-white font-bold text-xs">B</div>
+    </div>
+    {/* Merge arrow */}
+    <div className="absolute inset-0 flex items-center justify-center">
+      <div className="w-8 h-0.5 bg-gradient-to-r from-blue-500 via-yellow-400 to-purple-500" style={{ animation: 'fadeInScale 3s ease-in-out infinite' }} />
+    </div>
+  </div>
+);
+
+const LuxuryCarRevealPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-900 to-black flex items-center justify-center">
+    {/* Car silhouette */}
+    <div className="relative" style={{ animation: 'fadeInScale 2.5s ease-out infinite' }}>
+      <div className="w-24 h-8 bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 rounded-t-lg rounded-b-sm shadow-2xl" />
+      <div className="absolute -bottom-1 left-2 w-4 h-4 bg-gray-900 rounded-full border-2 border-gray-600" />
+      <div className="absolute -bottom-1 right-2 w-4 h-4 bg-gray-900 rounded-full border-2 border-gray-600" />
+    </div>
+    {/* Dramatic lighting */}
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-16 bg-yellow-500/10 rounded-full blur-3xl" />
+  </div>
+);
+
+const SkyscraperBuildPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-900 to-black flex items-end justify-center">
+    {/* Building */}
+    <div className="relative" style={{ animation: 'skyscraperBuild 4s ease-out infinite' }}>
+      <div className="w-12 h-24 bg-gradient-to-t from-gray-700 to-gray-600 rounded-t-sm">
+        {/* Windows */}
+        {Array.from({ length: 8 }).map((_, i) => (
+          <div key={i} className="w-2 h-2 bg-yellow-400/50 mx-auto mb-1" />
+        ))}
+      </div>
+    </div>
+    {/* Ground */}
+    <div className="absolute bottom-0 left-0 right-0 h-2 bg-gray-800" />
+  </div>
+);
+
+const SignatureAppearPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center">
+    {/* Document */}
+    <div className="w-24 h-28 bg-white shadow-lg rounded-sm p-2 border border-gray-300">
+      <div className="w-full h-0.5 bg-gray-800 mb-1 rounded" />
+      <div className="w-3/4 h-0.5 bg-gray-400 mb-0.5" />
+      <div className="w-full h-0.5 bg-gray-400 mb-0.5" />
+      <div className="w-2/3 h-0.5 bg-gray-300" />
+      {/* Signature line */}
+      <div className="absolute bottom-4 left-2 right-2">
+        <div className="w-full h-px bg-gray-400 mb-1" />
+        {/* Signature */}
+        <div className="w-12 h-3" style={{ animation: 'signatureWrite 3s ease-out infinite' }}>
+          <svg className="w-full h-full" viewBox="0 0 100 30" fill="none">
+            <path d="M 10 20 Q 20 10 30 20 Q 40 30 50 20 Q 60 10 70 20" stroke="black" strokeWidth="2" fill="none" style={{ animation: 'signatureDraw 3s ease-out infinite' }} />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const WealthCounterPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-900 to-black flex items-center justify-center">
+    <div className="text-center">
+      <div className="text-green-400/60 text-xs mb-1 font-mono">NET WORTH</div>
+      <div className="font-mono font-black text-2xl text-green-400" style={{ animation: 'wealthCount 3s ease-out infinite' }}>
+        $<span>1,000,000,000</span>
+      </div>
+      <div className="mt-2 flex items-center justify-center gap-1">
+        <div className="w-1 h-1 rounded-full bg-green-400 animate-pulse" />
+        <div className="w-1 h-1 rounded-full bg-green-400 animate-pulse" style={{ animationDelay: '0.2s' }} />
+        <div className="w-1 h-1 rounded-full bg-green-400 animate-pulse" style={{ animationDelay: '0.4s' }} />
+      </div>
+    </div>
+  </div>
+);
+
+const CorporateLogoWallPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-900 to-black">
+    <div className="grid grid-cols-3 gap-2 p-4">
+      {[0, 1, 2, 3, 4, 5].map((i) => (
+        <div
+          key={i}
+          className="w-8 h-8 bg-gradient-to-br from-gray-700 to-gray-800 rounded flex items-center justify-center"
+          style={{ animation: `fadeInScale 2s ease-out infinite ${i * 0.2}s` }}
+        >
+          <div className="w-4 h-4 bg-gray-600 rounded-sm" />
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
+const SuccessMontagePreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-black">
+    {/* Quick cuts */}
+    <div className="absolute inset-0 bg-gradient-to-br from-yellow-600 to-yellow-800 flex items-center justify-center" style={{ animation: 'fastCut1 2s steps(1) infinite' }}>
+      <span className="text-white font-bold text-sm">🏎️</span>
+    </div>
+    <div className="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center" style={{ animation: 'fastCut2 2s steps(1) infinite' }}>
+      <span className="text-white font-bold text-sm">⌚</span>
+    </div>
+    <div className="absolute inset-0 bg-gradient-to-br from-amber-600 to-amber-800 flex items-center justify-center" style={{ animation: 'fastCut3 2s steps(1) infinite' }}>
+      <span className="text-white font-bold text-sm">🏠</span>
+    </div>
+  </div>
+);
+
+const PowerMeetingPreview = () => (
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-900 to-black flex items-center justify-center">
+    {/* Table */}
+    <div className="w-28 h-12 bg-gradient-to-br from-amber-900 to-amber-950 rounded-lg shadow-2xl relative">
+      {/* Silhouettes around table */}
+      {[-1, 0, 1].map((i) => (
+        <div
+          key={i}
+          className="absolute w-3 h-5 bg-gray-800 rounded-t-full"
+          style={{ top: '-8px', left: `${50 + i * 25}%`, transform: 'translateX(-50%)' }}
+        />
+      ))}
+    </div>
+    {/* Dramatic lighting */}
+    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-24 bg-yellow-500/10 rounded-full blur-3xl" />
   </div>
 );
 

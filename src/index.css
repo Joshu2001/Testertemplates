@@ -311,6 +311,54 @@
   100% { opacity: 0; transform: scale(0.8); }
 }
 
+/* Magnates Media Style Animations */
+@keyframes moneyStack {
+  0% { transform: translateY(50px) rotateX(20deg); opacity: 0; }
+  50%, 100% { transform: translateY(0) rotateX(0deg); opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+}
+
+@keyframes goldShimmer {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+@keyframes mergerLeft {
+  0%, 40% { transform: translateX(0); }
+  60%, 100% { transform: translateX(30px); }
+}
+
+@keyframes mergerRight {
+  0%, 40% { transform: translateX(0); }
+  60%, 100% { transform: translateX(-30px); }
+}
+
+@keyframes skyscraperBuild {
+  0% { transform: scaleY(0); transform-origin: bottom; }
+  50%, 100% { transform: scaleY(1); transform-origin: bottom; }
+}
+
+@keyframes signatureWrite {
+  0% { width: 0; }
+  50%, 100% { width: 100%; }
+}
+
+@keyframes signatureDraw {
+  0% { stroke-dasharray: 0 200; }
+  50%, 100% { stroke-dasharray: 200 0; }
+}
+
+@keyframes wealthCount {
+  0% { transform: scale(0.8); opacity: 0; }
+  20% { transform: scale(1.1); opacity: 1; }
+  30% { transform: scale(1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
 @keyframes fadeInScale {
   0% { transform: scale(0.8); opacity: 0; }
   30%, 70% { transform: scale(1); opacity: 1; }
