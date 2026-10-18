@@ -7,7 +7,7 @@ function App() {
   const [activeCategory, setActiveCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [editingTemplate, setEditingTemplate] = useState<Template | null>(null);
-  const [showFeatured, setShowFeatured] = useState(false);
+  const [showFeatured, setShowFeatured] = useState(true);
 
   const featuredTemplates = useMemo(() => {
     return templates.filter(t => t.featured);
@@ -67,14 +67,14 @@ function App() {
                 onClick={() => setShowFeatured(!showFeatured)}
                 className={`hidden sm:flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all ${
                   showFeatured
-                    ? 'bg-purple-500/20 text-purple-300 border border-purple-500/40'
-                    : 'bg-gradient-to-r from-purple-500 to-pink-500 text-white hover:from-purple-600 hover:to-pink-600 shadow-lg shadow-purple-500/20'
+                    ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                    : 'bg-gray-800 text-gray-400 border border-gray-700 hover:border-amber-500/40 hover:text-amber-300'
                 }`}
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
-                JJ Style
+                {showFeatured ? 'JJ Style ✓' : 'JJ Style'}
               </button>
             </div>
           </div>
