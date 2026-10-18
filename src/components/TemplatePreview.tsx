@@ -315,97 +315,169 @@ const Rotate3DPreview = () => (
 // === NEW JAMES JANI STYLE PREVIEWS ===
 
 const Newspaper3DPreview = () => (
-  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900" style={{ perspective: '600px' }}>
-    <div className="absolute inset-0 flex items-center justify-center" style={{ animation: 'rotate3d 5s ease-in-out infinite' }}>
-      {/* Newspaper articles in 3D space */}
-      <div className="absolute w-20 h-14 bg-amber-50 rounded-sm shadow-lg -rotate-6 -translate-x-6 -translate-y-2 p-1" style={{ animation: 'parallax2 4s ease-in-out infinite' }}>
-        <div className="w-full h-1 bg-gray-800 mb-0.5 rounded-sm" />
-        <div className="w-3/4 h-0.5 bg-gray-400 mb-0.5 rounded-sm" />
-        <div className="w-full h-0.5 bg-gray-300 mb-0.5 rounded-sm" />
-        <div className="w-2/3 h-0.5 bg-gray-300 rounded-sm" />
-      </div>
-      <div className="absolute w-22 h-16 bg-amber-50 rounded-sm shadow-lg rotate-3 translate-x-4 translate-y-1 p-1" style={{ animation: 'parallax1 4s ease-in-out infinite' }}>
-        <div className="w-full h-1.5 bg-gray-900 mb-1 rounded-sm" />
-        <div className="w-full h-0.5 bg-gray-400 mb-0.5 rounded-sm" />
-        <div className="w-4/5 h-0.5 bg-gray-400 mb-0.5 rounded-sm" />
-        <div className="w-full h-0.5 bg-gray-300 mb-0.5 rounded-sm" />
-        <div className="w-3/4 h-0.5 bg-gray-300 rounded-sm" />
-      </div>
-      <div className="absolute w-18 h-12 bg-amber-50 rounded-sm shadow-lg rotate-12 translate-x-8 -translate-y-4 p-1" style={{ animation: 'parallax3 4s ease-in-out infinite' }}>
-        <div className="w-full h-1 bg-gray-800 mb-0.5 rounded-sm" />
-        <div className="w-2/3 h-0.5 bg-gray-400 rounded-sm" />
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-950 via-gray-900 to-black" style={{ perspective: '1000px' }}>
+    {/* Background depth layer */}
+    <div className="absolute inset-0" style={{ animation: 'parallax3 6s ease-in-out infinite', transform: 'translateZ(-200px)' }}>
+      <div className="absolute top-8 left-8 w-32 h-40 bg-amber-100/30 rounded shadow-2xl -rotate-12 blur-sm" />
+      <div className="absolute bottom-12 right-8 w-28 h-36 bg-amber-100/20 rounded shadow-2xl rotate-6 blur-sm" />
+    </div>
+    
+    {/* Mid layer - main newspaper */}
+    <div className="absolute inset-0 flex items-center justify-center" style={{ animation: 'newspaper3DFloat 6s ease-in-out infinite', transform: 'translateZ(-50px)' }}>
+      <div className="relative w-48 h-64 bg-amber-50 rounded shadow-2xl -rotate-3 p-4 border border-amber-200/50">
+        {/* Newspaper header */}
+        <div className="border-b-2 border-gray-900 pb-2 mb-3">
+          <div className="text-[8px] font-serif text-gray-600 text-center mb-1">THE DAILY TIMES</div>
+          <div className="text-base font-black text-gray-900 text-center leading-tight">MAJOR SCANDAL<br/>EXPOSED</div>
+          <div className="text-[6px] text-gray-500 text-center mt-1">MONDAY, JANUARY 15, 2024</div>
+        </div>
+        
+        {/* Article content */}
+        <div className="space-y-1.5">
+          <div className="w-full h-1 bg-gray-800 rounded-sm" />
+          <div className="w-full h-0.5 bg-gray-600 rounded-sm" />
+          <div className="w-11/12 h-0.5 bg-gray-600 rounded-sm" />
+          <div className="w-full h-0.5 bg-gray-600 rounded-sm" />
+          <div className="w-4/5 h-0.5 bg-gray-600 rounded-sm" />
+          <div className="w-full h-0.5 bg-gray-500 rounded-sm" />
+          <div className="w-3/4 h-0.5 bg-gray-500 rounded-sm" />
+          <div className="w-full h-0.5 bg-gray-500 rounded-sm" />
+          <div className="w-5/6 h-0.5 bg-gray-500 rounded-sm" />
+        </div>
+        
+        {/* Highlighted section */}
+        <div className="absolute bottom-8 left-4 right-4 h-6 bg-yellow-300/70 rounded-sm" style={{ animation: 'highlight 4s ease-in-out infinite' }} />
+        
+        {/* Paper texture */}
+        <div className="absolute inset-0 bg-gradient-to-br from-transparent via-amber-100/10 to-transparent pointer-events-none" />
       </div>
     </div>
-    {/* Highlight sweep */}
-    <div className="absolute bottom-4 left-4 right-4 h-2 bg-yellow-400/60 rounded-sm" style={{ animation: 'highlight 3s ease-in-out infinite' }} />
+    
+    {/* Front layer - secondary article */}
+    <div className="absolute inset-0" style={{ animation: 'newspaper3DFront 6s ease-in-out infinite', transform: 'translateZ(100px)' }}>
+      <div className="absolute top-16 right-12 w-36 h-48 bg-amber-50 rounded shadow-2xl rotate-6 p-3 border border-amber-200/50">
+        <div className="border-b border-gray-800 pb-1.5 mb-2">
+          <div className="text-sm font-black text-gray-900 leading-tight">$69M<br/>FRAUD</div>
+        </div>
+        <div className="space-y-1">
+          <div className="w-full h-0.5 bg-gray-600 rounded-sm" />
+          <div className="w-10/12 h-0.5 bg-gray-600 rounded-sm" />
+          <div className="w-full h-0.5 bg-gray-500 rounded-sm" />
+          <div className="w-3/4 h-0.5 bg-gray-500 rounded-sm" />
+        </div>
+      </div>
+    </div>
+    
+    {/* Dramatic lighting */}
+    <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-pink-900/10 pointer-events-none" />
   </div>
 );
 
 const HeadlineFlyPreview = () => (
-  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-slate-900 to-gray-900">
-    {/* Headlines flying in from different directions */}
-    <div className="absolute top-3 left-2 px-2 py-0.5 bg-white/90 rounded-sm shadow-md" style={{ animation: 'slideUp 3s ease-in-out infinite' }}>
-      <span className="text-[8px] font-bold text-gray-900">BREAKING NEWS</span>
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-slate-950 via-gray-900 to-black">
+    {/* Headlines flying in from different directions - much larger and more impactful */}
+    <div className="absolute top-6 left-4 px-4 py-2 bg-white/95 rounded shadow-2xl" style={{ animation: 'headlineFlyIn1 4s ease-out infinite' }}>
+      <div className="text-xs font-black text-gray-900 uppercase tracking-wide">BREAKING NEWS</div>
+      <div className="text-[8px] text-gray-600 mt-0.5">Major investigation launched</div>
     </div>
-    <div className="absolute top-8 right-2 px-2 py-0.5 bg-white/90 rounded-sm shadow-md" style={{ animation: 'slideUp 3s ease-in-out infinite 0.3s' }}>
-      <span className="text-[8px] font-bold text-gray-900">EXCLUSIVE REPORT</span>
+    
+    <div className="absolute top-16 right-6 px-4 py-2 bg-white/95 rounded shadow-2xl" style={{ animation: 'headlineFlyIn2 4s ease-out infinite 0.4s' }}>
+      <div className="text-sm font-black text-gray-900 uppercase tracking-wide">EXCLUSIVE</div>
+      <div className="text-[8px] text-gray-600 mt-0.5">Documents revealed</div>
     </div>
-    <div className="absolute top-14 left-4 px-2 py-0.5 bg-white/90 rounded-sm shadow-md" style={{ animation: 'slideUp 3s ease-in-out infinite 0.6s' }}>
-      <span className="text-[8px] font-bold text-gray-900">$69M SCANDAL</span>
+    
+    <div className="absolute top-32 left-8 px-4 py-2 bg-red-500/95 rounded shadow-2xl" style={{ animation: 'headlineFlyIn3 4s ease-out infinite 0.8s' }}>
+      <div className="text-base font-black text-white uppercase tracking-wider">$69M SCANDAL</div>
+      <div className="text-[9px] text-red-100 mt-0.5">Billions lost in fraud</div>
     </div>
-    <div className="absolute top-20 right-4 px-2 py-0.5 bg-red-500/90 rounded-sm shadow-md" style={{ animation: 'slideUp 3s ease-in-out infinite 0.9s' }}>
-      <span className="text-[8px] font-bold text-white">FRAUD EXPOSED</span>
+    
+    <div className="absolute bottom-16 right-8 px-4 py-2 bg-white/95 rounded shadow-2xl" style={{ animation: 'headlineFlyIn4 4s ease-out infinite 1.2s' }}>
+      <div className="text-xs font-black text-gray-900 uppercase tracking-wide">FRAUD EXPOSED</div>
+      <div className="text-[8px] text-gray-600 mt-0.5">CEO under investigation</div>
     </div>
-    <div className="absolute bottom-6 left-3 px-2 py-0.5 bg-white/90 rounded-sm shadow-md" style={{ animation: 'slideUp 3s ease-in-out infinite 1.2s' }}>
-      <span className="text-[8px] font-bold text-gray-900">INVESTIGATION</span>
+    
+    <div className="absolute bottom-6 left-6 px-4 py-2 bg-amber-500/95 rounded shadow-2xl" style={{ animation: 'headlineFlyIn5 4s ease-out infinite 1.6s' }}>
+      <div className="text-sm font-black text-white uppercase tracking-wide">INVESTIGATION</div>
+      <div className="text-[8px] text-amber-100 mt-0.5">Federal authorities involved</div>
     </div>
+    
+    {/* Dramatic lighting */}
+    <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-red-900/20 pointer-events-none" />
   </div>
 );
 
 const MoneyCounterPreview = () => (
-  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-950 to-green-950 flex items-center justify-center">
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-black via-gray-950 to-green-950 flex items-center justify-center">
     <div className="text-center">
-      <div className="text-green-400/60 text-xs mb-1 font-mono">TOTAL LOSSES</div>
-      <div className="font-mono font-black text-2xl text-green-400" style={{ animation: 'fadeInScale 2s ease-in-out infinite' }}>
-        $<span>69,000,000</span>
+      <div className="text-green-400/80 text-sm mb-2 font-mono uppercase tracking-wider">Total Losses</div>
+      <div className="font-mono font-black text-5xl text-green-400 drop-shadow-[0_0_20px_rgba(74,222,128,0.5)]" style={{ animation: 'moneyCountUp 3s ease-out infinite' }}>
+        $69,000,000
       </div>
-      <div className="mt-2 flex items-center justify-center gap-1">
-        <div className="w-1 h-1 rounded-full bg-green-400 animate-pulse" />
-        <div className="w-1 h-1 rounded-full bg-green-400 animate-pulse" style={{ animationDelay: '0.2s' }} />
-        <div className="w-1 h-1 rounded-full bg-green-400 animate-pulse" style={{ animationDelay: '0.4s' }} />
+      <div className="mt-4 flex items-center justify-center gap-2">
+        <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+        <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" style={{ animationDelay: '0.2s' }} />
+        <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" style={{ animationDelay: '0.4s' }} />
       </div>
+      <div className="mt-3 text-green-500/60 text-xs font-mono">USD</div>
     </div>
-    {/* Floating dollar signs */}
-    {Array.from({ length: 6 }).map((_, i) => (
+    
+    {/* Floating dollar signs - larger and more visible */}
+    {Array.from({ length: 12 }).map((_, i) => (
       <span
         key={i}
-        className="absolute text-green-500/30 font-bold text-sm"
+        className="absolute text-green-500/40 font-bold text-2xl"
         style={{
-          left: `${10 + i * 15}%`,
-          top: `${20 + (i % 3) * 25}%`,
-          animation: `particleFloat ${2 + i * 0.5}s ease-in-out infinite ${i * 0.3}s`
+          left: `${5 + (i % 4) * 25}%`,
+          top: `${10 + Math.floor(i / 4) * 30}%`,
+          animation: `moneyFloat ${3 + (i % 3)}s ease-in-out infinite ${i * 0.2}s`
         }}
       >
         $
       </span>
     ))}
+    
+    {/* Dramatic glow effect */}
+    <div className="absolute inset-0 bg-gradient-to-br from-green-500/10 via-transparent to-green-500/10 pointer-events-none" />
   </div>
 );
 
 const PhotoStackPreview = () => (
-  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-900 to-slate-900" style={{ perspective: '800px' }}>
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-950 via-slate-900 to-black" style={{ perspective: '1200px' }}>
     <div className="absolute inset-0 flex items-center justify-center">
-      {/* Stacked photos with 3D rotation */}
-      <div className="absolute w-16 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded shadow-xl -rotate-12" style={{ animation: 'parallax3 4s ease-in-out infinite' }}>
-        <div className="w-full h-full flex items-center justify-center text-white text-[6px]">📷</div>
+      {/* Stacked photos with 3D rotation - much larger and more detailed */}
+      <div className="absolute w-40 h-32 bg-gradient-to-br from-blue-500 to-blue-700 rounded-lg shadow-2xl -rotate-12 -translate-x-8 -translate-y-4 border-4 border-white" style={{ animation: 'photoStackFloat1 5s ease-in-out infinite' }}>
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="w-3/4 h-3/4 bg-gradient-to-br from-blue-300 to-blue-500 rounded flex items-center justify-center">
+            <svg className="w-12 h-12 text-white/80" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+          </div>
+        </div>
       </div>
-      <div className="absolute w-16 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded shadow-xl rotate-6 translate-x-2" style={{ animation: 'parallax2 4s ease-in-out infinite' }}>
-        <div className="w-full h-full flex items-center justify-center text-white text-[6px]">📷</div>
+      
+      <div className="absolute w-44 h-36 bg-gradient-to-br from-purple-500 to-purple-700 rounded-lg shadow-2xl rotate-6 translate-x-6 translate-y-2 border-4 border-white" style={{ animation: 'photoStackFloat2 5s ease-in-out infinite 0.3s' }}>
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="w-3/4 h-3/4 bg-gradient-to-br from-purple-300 to-purple-500 rounded flex items-center justify-center">
+            <svg className="w-14 h-14 text-white/80" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+          </div>
+        </div>
       </div>
-      <div className="absolute w-16 h-12 bg-gradient-to-br from-rose-400 to-rose-600 rounded shadow-xl -rotate-3 -translate-x-3 translate-y-2" style={{ animation: 'parallax1 4s ease-in-out infinite' }}>
-        <div className="w-full h-full flex items-center justify-center text-white text-[6px]">📷</div>
+      
+      <div className="absolute w-48 h-40 bg-gradient-to-br from-rose-500 to-rose-700 rounded-lg shadow-2xl -rotate-3 -translate-x-4 translate-y-6 border-4 border-white" style={{ animation: 'photoStackFloat3 5s ease-in-out infinite 0.6s' }}>
+        <div className="w-full h-full flex items-center justify-center">
+          <div className="w-3/4 h-3/4 bg-gradient-to-br from-rose-300 to-rose-500 rounded flex items-center justify-center">
+            <svg className="w-16 h-16 text-white/80" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
+    
+    {/* Dramatic lighting */}
+    <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20 pointer-events-none" />
   </div>
 );
 
@@ -592,24 +664,63 @@ const ScrapbookFlipPreview = () => (
 );
 
 const RedactedDocPreview = () => (
-  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-    <div className="w-28 h-24 bg-white shadow-lg rounded-sm p-2 border border-gray-300">
-      <div className="w-full h-1.5 bg-gray-800 mb-1.5 rounded-sm" />
-      <div className="w-full h-1 bg-gray-400 mb-0.5 rounded-sm" />
-      {/* Redacted bars that animate */}
-      <div className="relative w-full h-2 mb-0.5">
-        <div className="absolute inset-0 bg-gray-400 rounded-sm" />
-        <div className="absolute inset-y-0 left-0 bg-black rounded-sm" style={{ animation: 'highlight 4s ease-in-out infinite' }}>
-          <span className="text-[5px] text-white px-0.5 leading-none relative top-0.5">CLASSIFIED</span>
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+    {/* Document - much larger and more detailed */}
+    <div className="w-56 h-72 bg-white shadow-2xl rounded-sm p-6 border border-gray-300 relative">
+      {/* Header */}
+      <div className="text-center mb-4 border-b-2 border-gray-800 pb-3">
+        <div className="text-xs font-bold text-gray-800 mb-1">UNITED STATES GOVERNMENT</div>
+        <div className="text-[8px] text-gray-600">DEPARTMENT OF JUSTICE</div>
+      </div>
+      
+      {/* Document content */}
+      <div className="space-y-2">
+        <div className="w-full h-2 bg-gray-800 rounded-sm" />
+        <div className="w-full h-1 bg-gray-500 rounded-sm" />
+        <div className="w-11/12 h-1 bg-gray-500 rounded-sm" />
+        <div className="w-full h-1 bg-gray-500 rounded-sm" />
+        
+        {/* Redacted sections - larger and more dramatic */}
+        <div className="relative w-full h-4 mb-2 mt-3">
+          <div className="absolute inset-0 bg-gray-400 rounded-sm" />
+          <div className="absolute inset-y-0 left-0 bg-black rounded-sm" style={{ animation: 'highlight 4s ease-in-out infinite' }}>
+            <span className="text-[8px] text-white px-1 leading-none relative top-1 font-bold">CLASSIFIED</span>
+          </div>
+        </div>
+        
+        <div className="relative w-4/5 h-4 mb-2">
+          <div className="absolute inset-0 bg-gray-400 rounded-sm" />
+          <div className="absolute inset-y-0 left-0 bg-black rounded-sm" style={{ animation: 'highlight 4s ease-in-out infinite 0.5s' }} />
+        </div>
+        
+        <div className="w-full h-1 bg-gray-500 rounded-sm" />
+        <div className="w-3/4 h-1 bg-gray-500 rounded-sm" />
+        <div className="w-full h-1 bg-gray-400 rounded-sm" />
+        <div className="w-2/3 h-1 bg-gray-400 rounded-sm" />
+        
+        {/* Another redacted section */}
+        <div className="relative w-full h-4 mb-2 mt-3">
+          <div className="absolute inset-0 bg-gray-400 rounded-sm" />
+          <div className="absolute inset-y-0 left-0 bg-black rounded-sm" style={{ animation: 'highlight 4s ease-in-out infinite 1s' }}>
+            <span className="text-[8px] text-white px-1 leading-none relative top-1 font-bold">TOP SECRET</span>
+          </div>
+        </div>
+        
+        <div className="w-full h-1 bg-gray-500 rounded-sm" />
+        <div className="w-5/6 h-1 bg-gray-500 rounded-sm" />
+      </div>
+      
+      {/* Official stamp */}
+      <div className="absolute bottom-6 right-6 w-16 h-16 border-4 border-red-600 rounded-full flex items-center justify-center rotate-12 opacity-70">
+        <div className="text-center">
+          <div className="text-red-600 text-[8px] font-black">OFFICIAL</div>
+          <div className="text-red-600 text-[6px]">USE ONLY</div>
         </div>
       </div>
-      <div className="relative w-3/4 h-2 mb-0.5">
-        <div className="absolute inset-0 bg-gray-400 rounded-sm" />
-        <div className="absolute inset-y-0 left-0 bg-black rounded-sm" style={{ animation: 'highlight 4s ease-in-out infinite 0.5s' }} />
-      </div>
-      <div className="w-full h-1 bg-gray-300 rounded-sm mt-1" />
-      <div className="w-2/3 h-1 bg-gray-300 rounded-sm" />
     </div>
+    
+    {/* Dramatic lighting */}
+    <div className="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-transparent to-gray-900/10 pointer-events-none" />
   </div>
 );
 
@@ -822,42 +933,66 @@ const MagnifyZoomPreview = () => (
 );
 
 const ConspiracyBoardPreview = () => (
-  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-amber-900 to-yellow-900">
-    {/* Photos */}
+  <div className="relative w-full h-full overflow-hidden bg-gradient-to-br from-amber-950 via-amber-900 to-yellow-950">
+    {/* Cork board texture */}
+    <div className="absolute inset-0 bg-gradient-to-br from-amber-800/30 via-transparent to-amber-700/30" />
+    
+    {/* Photos - much larger and more detailed */}
     {[
-      { x: '15%', y: '20%', rotate: '-10deg' },
-      { x: '65%', y: '15%', rotate: '5deg' },
-      { x: '40%', y: '55%', rotate: '-5deg' },
-      { x: '75%', y: '60%', rotate: '8deg' },
+      { x: '10%', y: '15%', rotate: '-10deg', size: 'w-20 h-16' },
+      { x: '60%', y: '10%', rotate: '5deg', size: 'w-24 h-20' },
+      { x: '35%', y: '50%', rotate: '-5deg', size: 'w-22 h-18' },
+      { x: '70%', y: '55%', rotate: '8deg', size: 'w-20 h-16' },
     ].map((photo, i) => (
       <div
         key={i}
-        className="absolute w-8 h-6 bg-gradient-to-br from-gray-600 to-gray-700 rounded-sm shadow-lg"
+        className={`absolute ${photo.size} bg-gradient-to-br from-gray-600 to-gray-800 rounded shadow-2xl border-4 border-white`}
         style={{ left: photo.x, top: photo.y, transform: `rotate(${photo.rotate})` }}
       >
-        <div className="w-full h-full flex items-center justify-center text-white text-[6px]">📷</div>
+        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-500 to-gray-700">
+          <svg className="w-10 h-10 text-white/60" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
+        </div>
       </div>
     ))}
-    {/* Red strings */}
+    
+    {/* Red strings - thicker and more visible */}
     <svg className="absolute inset-0 w-full h-full">
-      <line x1="18%" y1="23%" x2="68%" y2="18%" stroke="#ef4444" strokeWidth="1" />
-      <line x1="68%" y1="18%" x2="43%" y2="58%" stroke="#ef4444" strokeWidth="1" />
-      <line x1="43%" y1="58%" x2="78%" y2="63%" stroke="#ef4444" strokeWidth="1" />
-      <line x1="18%" y1="23%" x2="43%" y2="58%" stroke="#ef4444" strokeWidth="1" strokeDasharray="2,2" />
+      <line x1="15%" y1="23%" x2="65%" y2="20%" stroke="#dc2626" strokeWidth="2" opacity="0.8" />
+      <line x1="65%" y1="20%" x2="40%" y2="58%" stroke="#dc2626" strokeWidth="2" opacity="0.8" />
+      <line x1="40%" y1="58%" x2="75%" y2="63%" stroke="#dc2626" strokeWidth="2" opacity="0.8" />
+      <line x1="15%" y1="23%" x2="40%" y2="58%" stroke="#dc2626" strokeWidth="2" opacity="0.6" strokeDasharray="4,4" />
+      <line x1="65%" y1="20%" x2="75%" y2="63%" stroke="#dc2626" strokeWidth="2" opacity="0.6" strokeDasharray="4,4" />
     </svg>
-    {/* Pins */}
+    
+    {/* Pins - larger and more visible */}
     {[
-      { x: '17%', y: '21%' },
-      { x: '67%', y: '16%' },
-      { x: '42%', y: '56%' },
-      { x: '77%', y: '61%' },
+      { x: '14%', y: '22%' },
+      { x: '64%', y: '19%' },
+      { x: '39%', y: '57%' },
+      { x: '74%', y: '62%' },
     ].map((pin, i) => (
       <div
         key={i}
-        className="absolute w-1.5 h-1.5 rounded-full bg-red-600 border border-red-800"
+        className="absolute w-3 h-3 rounded-full bg-red-600 border-2 border-red-900 shadow-lg"
         style={{ left: pin.x, top: pin.y }}
-      />
+      >
+        <div className="w-full h-full rounded-full bg-gradient-to-br from-red-400 to-red-700" />
+      </div>
     ))}
+    
+    {/* Notes */}
+    <div className="absolute top-8 right-12 w-16 h-12 bg-yellow-200 shadow-lg rotate-12 p-1">
+      <div className="w-full h-0.5 bg-gray-600 mb-0.5" />
+      <div className="w-3/4 h-0.5 bg-gray-600 mb-0.5" />
+      <div className="w-full h-0.5 bg-gray-500" />
+    </div>
+    
+    <div className="absolute bottom-12 left-12 w-14 h-10 bg-blue-200 shadow-lg -rotate-6 p-1">
+      <div className="w-full h-0.5 bg-gray-600 mb-0.5" />
+      <div className="w-2/3 h-0.5 bg-gray-600" />
+    </div>
   </div>
 );
 

@@ -359,6 +359,164 @@
   100% { transform: scale(1); opacity: 1; }
 }
 
+/* Improved James Jani Style Animations */
+@keyframes newspaper3DFloat {
+  0%, 100% { 
+    transform: translateZ(-50px) rotateY(-5deg) rotateX(2deg);
+  }
+  50% { 
+    transform: translateZ(-50px) rotateY(5deg) rotateX(-2deg);
+  }
+}
+
+@keyframes newspaper3DFront {
+  0%, 100% { 
+    transform: translateZ(100px) rotateY(3deg) rotateX(-1deg);
+  }
+  50% { 
+    transform: translateZ(100px) rotateY(-3deg) rotateX(1deg);
+  }
+}
+
+@keyframes headlineFlyIn1 {
+  0% { 
+    transform: translateX(-200%) translateY(-50px) rotate(-10deg);
+    opacity: 0;
+  }
+  20%, 80% { 
+    transform: translateX(0) translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% { 
+    transform: translateX(200%) translateY(50px) rotate(10deg);
+    opacity: 0;
+  }
+}
+
+@keyframes headlineFlyIn2 {
+  0% { 
+    transform: translateX(200%) translateY(-50px) rotate(10deg);
+    opacity: 0;
+  }
+  20%, 80% { 
+    transform: translateX(0) translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% { 
+    transform: translateX(-200%) translateY(50px) rotate(-10deg);
+    opacity: 0;
+  }
+}
+
+@keyframes headlineFlyIn3 {
+  0% { 
+    transform: translateX(-200%) scale(0.5);
+    opacity: 0;
+  }
+  20%, 80% { 
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  100% { 
+    transform: translateX(200%) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@keyframes headlineFlyIn4 {
+  0% { 
+    transform: translateY(200%) rotate(15deg);
+    opacity: 0;
+  }
+  20%, 80% { 
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% { 
+    transform: translateY(-200%) rotate(-15deg);
+    opacity: 0;
+  }
+}
+
+@keyframes headlineFlyIn5 {
+  0% { 
+    transform: translateX(-150%) translateY(100px) rotate(-20deg);
+    opacity: 0;
+  }
+  20%, 80% { 
+    transform: translateX(0) translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% { 
+    transform: translateX(150%) translateY(-100px) rotate(20deg);
+    opacity: 0;
+  }
+}
+
+@keyframes photoStackFloat1 {
+  0%, 100% { 
+    transform: translateZ(-100px) rotate(-12deg) translateX(-8px) translateY(-4px);
+  }
+  50% { 
+    transform: translateZ(-100px) rotate(-8deg) translateX(-12px) translateY(-8px);
+  }
+}
+
+@keyframes photoStackFloat2 {
+  0%, 100% { 
+    transform: translateZ(0px) rotate(6deg) translateX(6px) translateY(2px);
+  }
+  50% { 
+    transform: translateZ(0px) rotate(10deg) translateX(10px) translateY(6px);
+  }
+}
+
+@keyframes photoStackFloat3 {
+  0%, 100% { 
+    transform: translateZ(100px) rotate(-3deg) translateX(-4px) translateY(6px);
+  }
+  50% { 
+    transform: translateZ(100px) rotate(1deg) translateX(-8px) translateY(10px);
+  }
+}
+
+@keyframes moneyCountUp {
+  0% { 
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  20% { 
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  30% { 
+    transform: scale(1);
+  }
+  100% { 
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes moneyFloat {
+  0%, 100% { 
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0.4;
+  }
+  25% { 
+    transform: translateY(-30px) translateX(15px) rotate(10deg);
+    opacity: 0.6;
+  }
+  50% { 
+    transform: translateY(-50px) translateX(-10px) rotate(-5deg);
+    opacity: 0.3;
+  }
+  75% { 
+    transform: translateY(-30px) translateX(-15px) rotate(5deg);
+    opacity: 0.6;
+  }
+}
+
 @keyframes fadeInScale {
   0% { transform: scale(0.8); opacity: 0; }
   30%, 70% { transform: scale(1); opacity: 1; }
